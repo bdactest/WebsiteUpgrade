@@ -1,0 +1,19 @@
+<h1 mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragHandle>{{title}}</h1>
+<br/>
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input title="Title" class="title-form-field" matInput readonly [(ngModel)]="data.name">
+    </mat-form-field>
+    <br/>
+    <quill-editor name="quilleditor" class="content-editor" [placeholder]="''" [(ngModel)]="data.description"> </quill-editor>
+    <br/>
+    <quill-editor name="quilleditor2" class="content-editor" [placeholder]="''" [(ngModel)]="data.directions"> </quill-editor>
+    <br/>
+    <br/>
+    <br/>
+</div>
+<div mat-dialog-actions class="edit-button-panel">
+    <button class="edit-button" mat-raised-button color="primary" value="Confirm" [mat-dialog-close]="data" >Save</button>
+    <button class="edit-button" mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+</div>
